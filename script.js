@@ -2,12 +2,13 @@
 function Person(name, age) {
   this.name = name;
   this.age = age;
+	 greet(){
+		 console.log(`Hello, my name is ${name}, I am ${age} years old.`)
+	 }
 }
 
 // Person prototype method
-Person.prototype.greet = function() {
-  console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
-};
+Person.greet ();
 
 // Employee constructor function
 function Employee(name, age, jobTitle) {
@@ -23,8 +24,3 @@ Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.jobGreet = function() {
   console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
 };
-
-// Create an Employee object and call its methods
-const employee = new Employee("Alice", 30, "Manager");
-employee.greet(); // Output: "Hello, my name is Alice, I am 30 years old."
-employee.jobGreet(); // Output: "Hello, my name is Alice, I am 30 years old, and my job title is Manager."
